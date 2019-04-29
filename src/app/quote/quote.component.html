@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="jumbotron">
+      <h1>QUOTES</h1>
+      
+    </div>
+    <div class="row">
+<app-quote-form></app-quote-form>      <ul>
+        <div *ngFor='let quote of quotes; let i=index' class="details d-flex flex-column align-items-center">
+          <p class="mb-5 text-center">{{quote.quote}}</p>
+  
+          <app-quote-details [quote]='quote' class="mb-3"></app-quote-details>
+          <div class="buttons d-flex justify-content-center">
+            <button (click)="upVote(i)" class="btn btn-primary mr-2">UPVOTE</button>
+            <button (click)="downVote(i)" class="btn btn-primary mr-2">DOWNVOTE</button>
+            <button (click)="deleteQuote(i)" class="btn btn-danger mr-2">DELETE</button>
+          </div>
+  
+        </div>
+      </ul>
+    </div>
+  </div>
+  
